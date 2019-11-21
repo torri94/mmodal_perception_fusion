@@ -16,7 +16,7 @@ Finally the Feature Selector join the data from Reasoner and Feature Selector mo
 
 
 <p align="center"> 
-<img src="https://github.com/maicivan/sofar_multimodal/blob/master/imgs/Schermata%202019-11-14%20alle%2014.55.55.png">
+<img src="https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/imgs/Schermata%202019-11-14%20alle%2014.55.55.png">
 </p>
 
 #### Messages
@@ -80,7 +80,7 @@ float32 correlation
 #### Messages Rappresentation
 
 <p align="center"> 
-<img src="https://github.com/maicivan/sofar_multimodal/blob/master/imgs/Schermata%202019-11-14%20alle%2016.39.25.png">
+<img src="https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/imgs/Schermata%202019-11-14%20alle%2016.39.25.png">
 </p>
 
 ### Description of the Modules
@@ -170,17 +170,17 @@ rostpic echo /featureMatcher/dataPub
 It presents the result using (images or videos) of the working system, in (real or simulation).
 
 <p align="center"> 
-<img src="https://github.com/maicivan/sofar_multimodal/blob/master/imgs/VirtualBox_EmaroBox_1_21_11_2019_11_53_42.png">
+<img src="https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/imgs/VirtualBox_EmaroBox_1_21_11_2019_11_53_42.png">
 </p>
 
 ### Video
-[![Watch the video](https://github.com/maicivan/sofar_multimodal/blob/master/imgs/VirtualBox_EmaroBox_1_21_11_2019_11_53_42.png)](https://www.youtube.com/embed/JwPSA9yZG2A)
+[![Watch the video](https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/imgs/VirtualBox_EmaroBox_1_21_11_2019_11_53_42.png)](https://www.youtube.com/embed/JwPSA9yZG2A)
 
 ## Recommendations
 To add a perception module, you will need to add an Adapter module between perception module and feature selector module.
-Then, add a subscriber and its callback in featureScheduler.py by following the [commented example](https://github.com/maicivan/sofar_multimodal/blob/a56460ff915c84362d3897307453054a5fdfaa02/scripts/featureScheduler.py#L104-L105) into the script.
+Then, add a subscriber and its callback in featureScheduler.py by following the [commented example](https://github.com/EmaroLab/mmodal_perception_fusion/blob/a56460ff915c84362d3897307453054a5fdfaa02/scripts/featureScheduler.py#L104-L105) into the script.
 
-In [docs](https://github.com/maicivan/sofar_multimodal/blob/master/docs/) directory there is the doxygen documentation in html or latex format.
+In [docs](https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/docs/) directory there is the doxygen documentation in html or latex format.
 
 
 ## Authors
