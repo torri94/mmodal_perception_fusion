@@ -140,7 +140,10 @@ On the machine must be installed RoS with rospy and python.
 ### Installation
 ```
 cd catkin_ws/src/
-git clone https://github.com/maicivan/sofar_multimodal.git
+catkin_create_pkg sofar_multimodal std_msgs rospy roscpp
+catkin_make
+ . ~/catkin_ws/devel/setup.bash
+git clone https://github.com/EmaroLab/mmodal_perception_fusion.git sofar_multimodal
 ```
 ### How to run the project
 
