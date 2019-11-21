@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+
+import rospy
+from std_msgs.msg import String
+from sofar_multimodal.msg import TensorOutput
+
+
+def talker():
+	pub = rospy.Publisher('TensorChannel', TensorOutput, queue_size=10)
+	rospy.init_node('talkerTensor', anonymous=True)
+	rate = rospy.Rate(10) # 10hz	
+	while not rospy.is_shutdown():		
+		
+		msg = TensorOutput()
+		
+		msg.x_2d.append(1.1)
+		msg.y_2d.append(1.2)
+		msg.result.append('casa: 85%')
+		
+		msg.x_2d.append(9.1)
+		msg.y_2d.append(9.2)
+		msg.result.append('telefono: 95%')
+		
+		msg.x_2d.append(20.1)
+		msg.y_2d.append(20.2)
+		msg.result.append('bottiglia: 65%')	
+		
+		print(msg)
+		pub.publish(msg)
+		rate.sleep()
+
+if __name__ == '__main__':
+    try:
+        talker()
+    except rospy.ROSInterruptException:
+        pass

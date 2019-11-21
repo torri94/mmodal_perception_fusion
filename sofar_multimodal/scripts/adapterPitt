@@ -1,0 +1,54 @@
+#!/usr/bin/env python
+
+import rospy
+import random
+import string
+from std_msgs.msg import *
+from sofar_multimodal.msg import *
+
+
+
+elements = adapter()
+
+def callback(data): 
+	
+	types = ['float32','float32','string','float32[]', 'string']
+	name = ['pose_3d','pose_2d','shape_tag','c', 'id']
+	
+	#global elements
+	elements.id_mod = 1	
+	
+	for j in range (0,len(data.tr)):
+		o = obj()						
+		for i in range(0,len(name)):
+			f = feature()
+			f.name = name[i]
+			f.types = types[i]
+			if name[i] == 'pose_3d':
+				f.value.append(str(data.tr[j].x_3d))
+				f.value.append(str(data.tr[j].y_3d))
+				f.value.append(str(data.tr[j].z_3d))
+			if name[i] == 'pose_2d':
+				f.value.append(str(data.tr[j].x_2d))
+				f.value.append(str(data.tr[j].y_2d))
+			if name[i] == 'shape_tag':
+				f.value.append(data.tr[j].shape_tag)
+			if name[i] == 'c':
+				f.value.append(data.tr[j].shape_tag)
+			if name[i] == 'id':
+				#id_generetor = ''.join([random.choice(string.ascii_letters + string.digits) for n in range(32)])
+				id_generetor =str(random.uniform(10,100))
+				f.value.append(id_generetor)
+			o.obj.append(f)
+		elements.adap.append(o)
+
+if __name__ == '__main__':	
+	rospy.init_node('adapterPitt', anonymous=True)
+	rospy.Subscriber('PittChannel', TrackedShapes, callback)
+	pub=rospy.Publisher('outputAdapterPitt', adapter, queue_size=1)
+	rate=rospy.Rate(20)
+	while not rospy.is_shutdown():
+		pub.publish(elements)
+		elements.adap[:] = []
+		rate.sleep()
+

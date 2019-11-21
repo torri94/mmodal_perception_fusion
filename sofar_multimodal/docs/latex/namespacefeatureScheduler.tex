@@ -1,0 +1,179 @@
+\hypertarget{namespacefeatureScheduler}{}\doxysection{feature\+Scheduler Namespace Reference}
+\label{namespacefeatureScheduler}\index{featureScheduler@{featureScheduler}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacefeatureScheduler_a8e62cfcf92fc0c81450ec7248522ad6c}{comparison}} (buffer)
+\begin{DoxyCompactList}\small\item\em Function. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefeatureScheduler_ac15245fb1744b5f5b55274162ea70ce6}{check\+New\+Value}} (value, buffer)
+\begin{DoxyCompactList}\small\item\em Function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacefeatureScheduler_a352f5fb3d7ccf47740917b910d27e078}\label{namespacefeatureScheduler_a352f5fb3d7ccf47740917b910d27e078}} 
+def \mbox{\hyperlink{namespacefeatureScheduler_a352f5fb3d7ccf47740917b910d27e078}{callback\+Pitt}} (adapter)
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+B\+A\+CK. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacefeatureScheduler_a7086134b6a21475a831e77c0e483ba17}\label{namespacefeatureScheduler_a7086134b6a21475a831e77c0e483ba17}} 
+def \mbox{\hyperlink{namespacefeatureScheduler_a7086134b6a21475a831e77c0e483ba17}{callback\+Tensor}} (adapter)
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+B\+A\+CK. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacefeatureScheduler_a535fdeea07b1c215a8bd4cedc8575350}\label{namespacefeatureScheduler_a535fdeea07b1c215a8bd4cedc8575350}} 
+{\bfseries copy\+\_\+buf} = common\+Feature()
+\item 
+\mbox{\Hypertarget{namespacefeatureScheduler_aa828da7144f26d9ddf7ca338fc4067cb}\label{namespacefeatureScheduler_aa828da7144f26d9ddf7ca338fc4067cb}} 
+{\bfseries common\+Obj} = common\+Feature()
+\item 
+\mbox{\Hypertarget{namespacefeatureScheduler_a088b0a77a1a7dddba741b24e85a6a9d4}\label{namespacefeatureScheduler_a088b0a77a1a7dddba741b24e85a6a9d4}} 
+{\bfseries union\+\_\+objs} = selector\+Matcher()
+\item 
+\mbox{\Hypertarget{namespacefeatureScheduler_aeffe5d17559ca4e67ea434ac7edfc2aa}\label{namespacefeatureScheduler_aeffe5d17559ca4e67ea434ac7edfc2aa}} 
+{\bfseries compare} = common\+Feature()
+\item 
+\mbox{\Hypertarget{namespacefeatureScheduler_a612571f6c33e780c720ced178e6d49d9}\label{namespacefeatureScheduler_a612571f6c33e780c720ced178e6d49d9}} 
+{\bfseries output} = selector\+Matcher()
+\item 
+\mbox{\Hypertarget{namespacefeatureScheduler_a504b7fe145002dfb9bc18659ee8f6ec4}\label{namespacefeatureScheduler_a504b7fe145002dfb9bc18659ee8f6ec4}} 
+list {\bfseries common\+\_\+feature} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacefeatureScheduler_a3e15b56da7d44385bd73a3aba73c1755}\label{namespacefeatureScheduler_a3e15b56da7d44385bd73a3aba73c1755}} 
+list {\bfseries name\+\_\+common} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacefeatureScheduler_a19436635e821df6d2da58d40e7533eb6}\label{namespacefeatureScheduler_a19436635e821df6d2da58d40e7533eb6}} 
+{\bfseries anonymous}
+\item 
+\mbox{\Hypertarget{namespacefeatureScheduler_a7a749253243ac16c10b0f955f18c99c4}\label{namespacefeatureScheduler_a7a749253243ac16c10b0f955f18c99c4}} 
+\mbox{\hyperlink{namespacefeatureScheduler_a7a749253243ac16c10b0f955f18c99c4}{sub\+\_\+pitt}} = rospy.\+Subscriber(\textquotesingle{}output\+Adapter\+Pitt\textquotesingle{}, adapter, \mbox{\hyperlink{namespacefeatureScheduler_a352f5fb3d7ccf47740917b910d27e078}{callback\+Pitt}})
+\begin{DoxyCompactList}\small\item\em S\+U\+B\+S\+C\+R\+I\+B\+ER. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacefeatureScheduler_aa42113566fc07d2bafbe4b89a5908032}\label{namespacefeatureScheduler_aa42113566fc07d2bafbe4b89a5908032}} 
+\mbox{\hyperlink{namespacefeatureScheduler_aa42113566fc07d2bafbe4b89a5908032}{sub\+\_\+tensor}} = rospy.\+Subscriber(\textquotesingle{}output\+Adapter\+Tensor\textquotesingle{}, adapter, \mbox{\hyperlink{namespacefeatureScheduler_a7086134b6a21475a831e77c0e483ba17}{callback\+Tensor}})
+\begin{DoxyCompactList}\small\item\em S\+U\+B\+S\+C\+R\+I\+B\+ER. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacefeatureScheduler_a7fd054c26ec598631f00d46ddafcd04f}\label{namespacefeatureScheduler_a7fd054c26ec598631f00d46ddafcd04f}} 
+\mbox{\hyperlink{namespacefeatureScheduler_a7fd054c26ec598631f00d46ddafcd04f}{pub\+\_\+intersect}} = rospy.\+Publisher(\textquotesingle{}/feature\+Scheduler/pub\+Intersection\textquotesingle{}, selector\+Matcher, queue\+\_\+size=10)
+\begin{DoxyCompactList}\small\item\em P\+U\+B\+L\+I\+S\+H\+ER. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacefeatureScheduler_a5eaf68538ae10eb163ebdee44dc3fcd2}\label{namespacefeatureScheduler_a5eaf68538ae10eb163ebdee44dc3fcd2}} 
+\mbox{\hyperlink{namespacefeatureScheduler_a5eaf68538ae10eb163ebdee44dc3fcd2}{pub\+\_\+union}} = rospy.\+Publisher(\textquotesingle{}/feature\+Scheduler/pub\+Union\textquotesingle{}, selector\+Matcher, queue\+\_\+size=10)
+\begin{DoxyCompactList}\small\item\em P\+U\+B\+L\+I\+S\+H\+ER. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacefeatureScheduler_a5d283e0be892ad1756104ad56e80c257}\label{namespacefeatureScheduler_a5d283e0be892ad1756104ad56e80c257}} 
+{\bfseries rate} = rospy.\+Rate(10)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}author:    Filippo Lapide
+author: Vittoriofranco Vagge
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacefeatureScheduler_ac15245fb1744b5f5b55274162ea70ce6}\label{namespacefeatureScheduler_ac15245fb1744b5f5b55274162ea70ce6}} 
+\index{featureScheduler@{featureScheduler}!checkNewValue@{checkNewValue}}
+\index{checkNewValue@{checkNewValue}!featureScheduler@{featureScheduler}}
+\doxysubsubsection{\texorpdfstring{checkNewValue()}{checkNewValue()}}
+{\footnotesize\ttfamily def feature\+Scheduler.\+check\+New\+Value (\begin{DoxyParamCaption}\item[{}]{value,  }\item[{}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Function. 
+
+Function to checks if there are any older values from the same perception module to replace 
+
+Definition at line 91 of file feature\+Scheduler.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{91 \textcolor{keyword}{def }checkNewValue(value, buffer):}
+\DoxyCodeLine{92     }
+\DoxyCodeLine{94     \textcolor{keywordflow}{for} k \textcolor{keywordflow}{in} range(0,len(buffer.common)):}
+\DoxyCodeLine{95         if(value.id\_mod == buffer.common[k].id\_mod):}
+\DoxyCodeLine{96             buffer.common[k] = value}
+\DoxyCodeLine{97             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{98     buffer.common.append(value)}
+\DoxyCodeLine{99     }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacefeatureScheduler_a8e62cfcf92fc0c81450ec7248522ad6c}\label{namespacefeatureScheduler_a8e62cfcf92fc0c81450ec7248522ad6c}} 
+\index{featureScheduler@{featureScheduler}!comparison@{comparison}}
+\index{comparison@{comparison}!featureScheduler@{featureScheduler}}
+\doxysubsubsection{\texorpdfstring{comparison()}{comparison()}}
+{\footnotesize\ttfamily def feature\+Scheduler.\+comparison (\begin{DoxyParamCaption}\item[{}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Function. 
+
+The function that compare common features from objects by N different perception modules 
+
+Definition at line 20 of file feature\+Scheduler.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20 \textcolor{keyword}{def }comparison(buffer):}
+\DoxyCodeLine{21     \textcolor{keyword}{global} common\_feature, name\_common}
+\DoxyCodeLine{22     }
+\DoxyCodeLine{24     name\_common\_mem = []}
+\DoxyCodeLine{25     output.matcher[:] = []}
+\DoxyCodeLine{26     union\_objs.matcher[:] = []}
+\DoxyCodeLine{27     if(len(buffer.common)>1):}
+\DoxyCodeLine{28         \textcolor{stringliteral}{"""Loop to create the union objects struct to publish to FeatureMatcher module"""}}
+\DoxyCodeLine{29         \textcolor{keywordflow}{for} k \textcolor{keywordflow}{in} range(0,len(buffer.common)):}
+\DoxyCodeLine{30             \textcolor{keywordflow}{for} j \textcolor{keywordflow}{in} range(k+1,len(buffer.common)):}
+\DoxyCodeLine{31                 commonObj.common[:] = []}
+\DoxyCodeLine{32                 commonObj.common.append(buffer.common[k])}
+\DoxyCodeLine{33                 commonObj.common.append(buffer.common[j])}
+\DoxyCodeLine{34                 union\_objs.matcher.append(commonObj)}
+\DoxyCodeLine{35         pub\_union.publish(union\_objs)                                       \textcolor{comment}{\#PUBLISHER UNION DATA}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         \textcolor{stringliteral}{"""Loop to create the intersection objects struct to publish to tableMatcher module"""}}
+\DoxyCodeLine{38         \textcolor{keywordflow}{for} k \textcolor{keywordflow}{in} range(0,len(buffer.common)):}
+\DoxyCodeLine{39             \textcolor{keywordflow}{for} j \textcolor{keywordflow}{in} range(k+1,len(buffer.common)):}
+\DoxyCodeLine{40                 \textcolor{keywordflow}{for} oggetto \textcolor{keywordflow}{in} range(0,len(buffer.common[k].adap)):}
+\DoxyCodeLine{41                     \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} (buffer.common[k].adap):}
+\DoxyCodeLine{42                         \textcolor{keywordflow}{return}}
+\DoxyCodeLine{43                     \textcolor{stringliteral}{"""Loop to compare all features from different perption modules and find the common"""}}
+\DoxyCodeLine{44                     \textcolor{keywordflow}{for} feature \textcolor{keywordflow}{in} range(0, len(buffer.common[k].adap[oggetto].obj)):}
+\DoxyCodeLine{45                         \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} (buffer.common[j].adap):}
+\DoxyCodeLine{46                             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{47                         \textcolor{keywordflow}{for} feature\_2 \textcolor{keywordflow}{in} range(0, len(buffer.common[j].adap[0].obj)):}
+\DoxyCodeLine{48                             \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{49                                 if(buffer.common[k].adap[oggetto].obj[feature].name ==  buffer.common[j].adap[0].obj[feature\_2].name):}
+\DoxyCodeLine{50                                     common\_feature.append(feature)}
+\DoxyCodeLine{51                             \textcolor{keywordflow}{except} IndexError:}
+\DoxyCodeLine{52                                 print(\textcolor{stringliteral}{"OutOfIndex"})}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54                     \textcolor{stringliteral}{"""Loop to delete common feature of objects from scene read by K perception module"""} }
+\DoxyCodeLine{55                     \textcolor{keywordflow}{for} feature \textcolor{keywordflow}{in} range(len(buffer.common[k].adap[oggetto].obj)-\/1,-\/1,-\/1):}
+\DoxyCodeLine{56                         \textcolor{keywordflow}{if} common\_feature:}
+\DoxyCodeLine{57                             if(feature==common\_feature[-\/1]):}
+\DoxyCodeLine{58                                 name\_common.append(buffer.common[k].adap[oggetto].obj[feature].name)}
+\DoxyCodeLine{59                                 common\_feature.pop()}
+\DoxyCodeLine{60                             \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{61                                 del(buffer.common[k].adap[oggetto].obj[feature])}
+\DoxyCodeLine{62                         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{63                             del(buffer.common[k].adap[oggetto].obj[feature])}
+\DoxyCodeLine{64                     name\_common\_mem = list(name\_common)}
+\DoxyCodeLine{65                     name\_common[:]=[]}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67                 \textcolor{stringliteral}{"""Loop to delete common feature of objects from scene read by J perception module"""}}
+\DoxyCodeLine{68                 \textcolor{keywordflow}{for} oggetto \textcolor{keywordflow}{in} range(0,len(buffer.common[j].adap)):}
+\DoxyCodeLine{69                     name\_temp = list(name\_common\_mem)}
+\DoxyCodeLine{70                     \textcolor{keywordflow}{for} feature \textcolor{keywordflow}{in} range(len(buffer.common[j].adap[oggetto].obj)-\/1,-\/1,-\/1):}
+\DoxyCodeLine{71                         \textcolor{keywordflow}{if} name\_temp:}
+\DoxyCodeLine{72                             if(buffer.common[j].adap[oggetto].obj[feature].name == name\_temp[0]):}
+\DoxyCodeLine{73                                 del(name\_temp[0])}
+\DoxyCodeLine{74                             \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{75                                 del(buffer.common[j].adap[oggetto].obj[feature])}
+\DoxyCodeLine{76                         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{77                             del(buffer.common[j].adap[oggetto].obj[feature])}
+\DoxyCodeLine{78     }
+\DoxyCodeLine{79                 compare.common[:] = []}
+\DoxyCodeLine{80                 compare.common.append(buffer.common[k])}
+\DoxyCodeLine{81                 compare.common.append(buffer.common[j])}
+\DoxyCodeLine{82                 output.matcher.append(compare)              }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84         \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} (output.matcher[0].common[0].adap):}
+\DoxyCodeLine{85             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{86         \textcolor{keywordflow}{elif} \textcolor{keywordflow}{not} (output.matcher[0].common[0].adap[0]):}
+\DoxyCodeLine{87             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{88         pub\_intersect.publish(output)                                       \textcolor{comment}{\#PUBLISHER INTERSECTION DATA}}
+\DoxyCodeLine{89 }
+
+\end{DoxyCode}

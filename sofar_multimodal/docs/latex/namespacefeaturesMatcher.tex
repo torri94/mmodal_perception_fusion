@@ -1,0 +1,112 @@
+\hypertarget{namespacefeaturesMatcher}{}\doxysection{features\+Matcher Namespace Reference}
+\label{namespacefeaturesMatcher}\index{featuresMatcher@{featuresMatcher}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacefeaturesMatcher_a188d71ea933dc7f0ebf9c6585797e616}{matcher\+Function}} (obj\+\_\+list, r\+\_\+out)
+\begin{DoxyCompactList}\small\item\em Function. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefeaturesMatcher_a31a870d835a5f8bebe79e170e790a4d2}{callback\+Selector}} (selector\+Matcher)
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+B\+A\+CK. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacefeaturesMatcher_a57c4875932c98602279c7908ac2dda7a}\label{namespacefeaturesMatcher_a57c4875932c98602279c7908ac2dda7a}} 
+def \mbox{\hyperlink{namespacefeaturesMatcher_a57c4875932c98602279c7908ac2dda7a}{callback\+Reasoner}} (output\+Reasoner)
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+B\+A\+CK. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacefeaturesMatcher_a69b61fd5eb441a3a8bcfc576f91e246e}\label{namespacefeaturesMatcher_a69b61fd5eb441a3a8bcfc576f91e246e}} 
+{\bfseries reasoner\+\_\+out} = output\+Reasoner()
+\item 
+\mbox{\Hypertarget{namespacefeaturesMatcher_ac33419e20248883babe213bc827686fb}\label{namespacefeaturesMatcher_ac33419e20248883babe213bc827686fb}} 
+{\bfseries selector\+\_\+out} = selector\+Matcher()
+\item 
+\mbox{\Hypertarget{namespacefeaturesMatcher_afbbf33fabde361f47be9408049be5b57}\label{namespacefeaturesMatcher_afbbf33fabde361f47be9408049be5b57}} 
+{\bfseries obj\+\_\+list} = adapter()
+\item 
+\mbox{\Hypertarget{namespacefeaturesMatcher_ad63f0ce5beb2e16207bda0c515501ab9}\label{namespacefeaturesMatcher_ad63f0ce5beb2e16207bda0c515501ab9}} 
+{\bfseries id\+\_\+mod}
+\item 
+\mbox{\Hypertarget{namespacefeaturesMatcher_a3a51da573b8c9f53e53a5e72e6dc1a20}\label{namespacefeaturesMatcher_a3a51da573b8c9f53e53a5e72e6dc1a20}} 
+{\bfseries matcher} = matcher\+Obj()
+\item 
+\mbox{\Hypertarget{namespacefeaturesMatcher_a10ab1447b42ca8289d12ba562efb142a}\label{namespacefeaturesMatcher_a10ab1447b42ca8289d12ba562efb142a}} 
+{\bfseries anonymous}
+\item 
+\mbox{\Hypertarget{namespacefeaturesMatcher_a9ed860cc6c5254b080d6bf6793b54cd2}\label{namespacefeaturesMatcher_a9ed860cc6c5254b080d6bf6793b54cd2}} 
+\mbox{\hyperlink{namespacefeaturesMatcher_a9ed860cc6c5254b080d6bf6793b54cd2}{sub\+\_\+pitt}} = rospy.\+Subscriber(\textquotesingle{}reasoner\+\_\+output\textquotesingle{}, output\+Reasoner, \mbox{\hyperlink{namespacefeaturesMatcher_a57c4875932c98602279c7908ac2dda7a}{callback\+Reasoner}})
+\begin{DoxyCompactList}\small\item\em S\+U\+B\+S\+C\+R\+I\+B\+ER. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacefeaturesMatcher_aa67adba9e01c037e7a5f61d5cabab3fa}\label{namespacefeaturesMatcher_aa67adba9e01c037e7a5f61d5cabab3fa}} 
+\mbox{\hyperlink{namespacefeaturesMatcher_aa67adba9e01c037e7a5f61d5cabab3fa}{sub\+\_\+tensor}} = rospy.\+Subscriber(\textquotesingle{}/feature\+Scheduler/pub\+Union\textquotesingle{}, selector\+Matcher, \mbox{\hyperlink{namespacefeaturesMatcher_a31a870d835a5f8bebe79e170e790a4d2}{callback\+Selector}})
+\begin{DoxyCompactList}\small\item\em S\+U\+B\+S\+C\+R\+I\+B\+ER. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacefeaturesMatcher_a680372b4b35bedbdf80f94a3bcbb81a0}\label{namespacefeaturesMatcher_a680372b4b35bedbdf80f94a3bcbb81a0}} 
+\mbox{\hyperlink{namespacefeaturesMatcher_a680372b4b35bedbdf80f94a3bcbb81a0}{pub\+\_\+results}} = rospy.\+Publisher(\textquotesingle{}/feature\+Matcher/data\+Pub\textquotesingle{}, matcher\+Obj, queue\+\_\+size=10)
+\begin{DoxyCompactList}\small\item\em P\+U\+B\+L\+I\+S\+H\+ER. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacefeaturesMatcher_a5985a144c26b17ee8bb35f2ebcd396b6}\label{namespacefeaturesMatcher_a5985a144c26b17ee8bb35f2ebcd396b6}} 
+{\bfseries rate} = rospy.\+Rate(10)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}author:    Filippo Lapide
+author: Vittoriofranco Vagge
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacefeaturesMatcher_a31a870d835a5f8bebe79e170e790a4d2}\label{namespacefeaturesMatcher_a31a870d835a5f8bebe79e170e790a4d2}} 
+\index{featuresMatcher@{featuresMatcher}!callbackSelector@{callbackSelector}}
+\index{callbackSelector@{callbackSelector}!featuresMatcher@{featuresMatcher}}
+\doxysubsubsection{\texorpdfstring{callbackSelector()}{callbackSelector()}}
+{\footnotesize\ttfamily def features\+Matcher.\+callback\+Selector (\begin{DoxyParamCaption}\item[{}]{selector\+Matcher }\end{DoxyParamCaption})}
+
+
+
+C\+A\+L\+L\+B\+A\+CK. 
+
+Loop to create a list of objects from selctor\+Matcher input 
+
+Definition at line 36 of file features\+Matcher.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{36 \textcolor{keyword}{def }\mbox{\hyperlink{namespacefeaturesMatcher_a31a870d835a5f8bebe79e170e790a4d2}{callbackSelector}}(selectorMatcher):}
+\DoxyCodeLine{37     }
+\DoxyCodeLine{39     \textcolor{keywordflow}{for} moduli \textcolor{keywordflow}{in} selectorMatcher.matcher:}
+\DoxyCodeLine{40         \textcolor{keywordflow}{for} scene \textcolor{keywordflow}{in} moduli.common:}
+\DoxyCodeLine{41             \textcolor{keywordflow}{for} oggetti \textcolor{keywordflow}{in} scene.adap:}
+\DoxyCodeLine{42                 obj\_list.adap.append(oggetti)  }
+\DoxyCodeLine{43     }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacefeaturesMatcher_a188d71ea933dc7f0ebf9c6585797e616}\label{namespacefeaturesMatcher_a188d71ea933dc7f0ebf9c6585797e616}} 
+\index{featuresMatcher@{featuresMatcher}!matcherFunction@{matcherFunction}}
+\index{matcherFunction@{matcherFunction}!featuresMatcher@{featuresMatcher}}
+\doxysubsubsection{\texorpdfstring{matcherFunction()}{matcherFunction()}}
+{\footnotesize\ttfamily def features\+Matcher.\+matcher\+Function (\begin{DoxyParamCaption}\item[{}]{obj\+\_\+list,  }\item[{}]{r\+\_\+out }\end{DoxyParamCaption})}
+
+
+
+Function. 
+
+Function to match union\+Object from feature\+Selector module with the I\+Ds passed by reasoner module 
+
+Definition at line 19 of file features\+Matcher.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19 \textcolor{keyword}{def }\mbox{\hyperlink{namespacefeaturesMatcher_a188d71ea933dc7f0ebf9c6585797e616}{matcherFunction}}(obj\_list, r\_out):}
+\DoxyCodeLine{20     }
+\DoxyCodeLine{22     \textcolor{keywordflow}{for} linea \textcolor{keywordflow}{in} r\_out.lines:}
+\DoxyCodeLine{23         matcher.sameObj[:] = []}
+\DoxyCodeLine{24         matcher.correlation = linea.corr}
+\DoxyCodeLine{25         \textcolor{keywordflow}{for} ogg\_reas \textcolor{keywordflow}{in} linea.rec:}
+\DoxyCodeLine{26             \textcolor{keywordflow}{for} ogg\_lista \textcolor{keywordflow}{in} obj\_list.adap:}
+\DoxyCodeLine{27                 \textcolor{keywordflow}{for} caratteristica \textcolor{keywordflow}{in} ogg\_lista.obj:}
+\DoxyCodeLine{28                     \textcolor{keywordflow}{if} (caratteristica.name == \textcolor{stringliteral}{'id'}):}
+\DoxyCodeLine{29                         \textcolor{keywordflow}{if} ((ogg\_reas[1:]) == (caratteristica.value[0])):}
+\DoxyCodeLine{30                             matcher.sameObj.append(ogg\_lista)                           \textcolor{comment}{\# make a list of matching objects}}
+\DoxyCodeLine{31                             obj\_list.adap.remove(ogg\_lista)                             \textcolor{comment}{\# delete the object from the list}}
+\DoxyCodeLine{32         pub\_results.publish(matcher)                                                    \textcolor{comment}{\# pubblish output}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+
+\end{DoxyCode}

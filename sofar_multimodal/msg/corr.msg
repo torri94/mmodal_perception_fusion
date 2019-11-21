@@ -1,0 +1,3 @@
+string first_percepted_object
+string second_percepted_object
+float32 correlation
