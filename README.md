@@ -1,7 +1,7 @@
 # A Software Architecture for Multimodal Semantic Perception Fusion
 
 ## Objective of the Project
-The prject proposes an implementation of architecture to fuse geometric features computed from point clouds and Convolution Neural Network (CNN) classifications, based on images.
+The project proposes an implementation of architecture to fuse geometric features computed from point clouds and Convolution Neural Network (CNN) classifications, based on images.
 
 ## The System’s Architecture
 
