@@ -77,6 +77,12 @@ record[] lines
 obj[] sameObj
 float32 correlation
 ```
+##### Matcher_out.msg
+
+```
+feature[] obj
+float32 correlation
+```
 #### Messages Rappresentation
 
 <p align="center"> 
@@ -117,7 +123,7 @@ From the Reasoner, this module receives the objects' IDs detected by different p
 From Feature Selector, Feature Matcher receives all data of objects detected.
 The Features Matcher finds the information by searching for objects' IDs and assorting all features coming from different perceptive modules. Then, it returns an output message for each object recognized comprehensive with all information collected by the various sensors.
 * __Input__: a selectorMatcher.msg | outputReasoner.msg
-* __Output__: a matcherObj.msg
+* __Output__: a matcher_out.msg
 * __Publisher__: /featureMatcher/dataPub [__P__]
 
 #### Table matcher module
