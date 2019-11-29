@@ -174,10 +174,9 @@ rostpic echo /featureMatcher/dataPub
 ```
 
 ## Results
-It presents the result using (images or videos) of the working system, in (real or simulation).
 
 <p align="center"> 
-<img src="https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/imgs/VirtualBox_EmaroBox_1_21_11_2019_11_53_42.png">
+<img src="https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/imgs/VirtualBox_EmaroBox_1_29_11_2019_16_32_49.png?raw=true">
 </p>
 
 ### Video
