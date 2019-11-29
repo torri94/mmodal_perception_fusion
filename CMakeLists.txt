@@ -30,7 +30,8 @@ find_package(catkin REQUIRED COMPONENTS
 	  correlationTable.msg      
 	  record.msg
 	  outputReasoner.msg        
-    matcherObj.msg     
+    matcherObj.msg
+    matcher_out.msg
   )
 
 ## Generate added messages and services with any dependencies listed here
