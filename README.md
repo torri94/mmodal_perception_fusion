@@ -151,6 +151,7 @@ catkin_make
  . ~/catkin_ws/devel/setup.bash
 cd sofar_multimodal
 git clone https://github.com/EmaroLab/mmodal_perception_fusion.git .
+catkin_make
 ```
 ### How to run the project
 
