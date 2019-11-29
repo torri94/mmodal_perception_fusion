@@ -97,9 +97,15 @@ Variables</h2></td></tr>
 <tr class="memitem:ad63f0ce5beb2e16207bda0c515501ab9"><td class="memItemLeft" align="right" valign="top"><a id="ad63f0ce5beb2e16207bda0c515501ab9"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>id_mod</b></td></tr>
 <tr class="separator:ad63f0ce5beb2e16207bda0c515501ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5723a8ca464c43e271f8cd1d9b24b57d"><td class="memItemLeft" align="right" valign="top"><a id="a5723a8ca464c43e271f8cd1d9b24b57d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>obj_out</b> = obj()</td></tr>
+<tr class="separator:a5723a8ca464c43e271f8cd1d9b24b57d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a51da573b8c9f53e53a5e72e6dc1a20"><td class="memItemLeft" align="right" valign="top"><a id="a3a51da573b8c9f53e53a5e72e6dc1a20"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>matcher</b> = matcherObj()</td></tr>
 <tr class="separator:a3a51da573b8c9f53e53a5e72e6dc1a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8170512cd49781ab387e61ed472ee252"><td class="memItemLeft" align="right" valign="top"><a id="a8170512cd49781ab387e61ed472ee252"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>matcherOut</b> = matcher_out()</td></tr>
+<tr class="separator:a8170512cd49781ab387e61ed472ee252"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10ab1447b42ca8289d12ba562efb142a"><td class="memItemLeft" align="right" valign="top"><a id="a10ab1447b42ca8289d12ba562efb142a"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>anonymous</b></td></tr>
 <tr class="separator:a10ab1447b42ca8289d12ba562efb142a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -112,7 +118,7 @@ Variables</h2></td></tr>
 <tr class="memdesc:aa67adba9e01c037e7a5f61d5cabab3fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">SUBSCRIBER. <br /></td></tr>
 <tr class="separator:aa67adba9e01c037e7a5f61d5cabab3fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a680372b4b35bedbdf80f94a3bcbb81a0"><td class="memItemLeft" align="right" valign="top"><a id="a680372b4b35bedbdf80f94a3bcbb81a0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefeaturesMatcher.html#a680372b4b35bedbdf80f94a3bcbb81a0">pub_results</a> = rospy.Publisher('/featureMatcher/dataPub', matcherObj, queue_size=10)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefeaturesMatcher.html#a680372b4b35bedbdf80f94a3bcbb81a0">pub_results</a> = rospy.Publisher('/featureMatcher/dataPub', matcher_out, queue_size=10)</td></tr>
 <tr class="memdesc:a680372b4b35bedbdf80f94a3bcbb81a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">PUBLISHER. <br /></td></tr>
 <tr class="separator:a680372b4b35bedbdf80f94a3bcbb81a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5985a144c26b17ee8bb35f2ebcd396b6"><td class="memItemLeft" align="right" valign="top"><a id="a5985a144c26b17ee8bb35f2ebcd396b6"></a>
@@ -142,14 +148,14 @@ author: Vittoriofranco Vagge
 <p>CALLBACK. </p>
 <p>Loop to create a list of objects from selctorMatcher input </p>
 
-<p class="definition">Definition at line <a class="el" href="featuresMatcher_8py_source.html#l00036">36</a> of file <a class="el" href="featuresMatcher_8py_source.html">featuresMatcher.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">def </span><a class="code" href="namespacefeaturesMatcher.html#a31a870d835a5f8bebe79e170e790a4d2">callbackSelector</a>(selectorMatcher):</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">for</span> moduli <span class="keywordflow">in</span> selectorMatcher.matcher:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">for</span> scene <span class="keywordflow">in</span> moduli.common:</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">for</span> oggetti <span class="keywordflow">in</span> scene.adap:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                obj_list.adap.append(oggetti)  </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    </div>
+<p class="definition">Definition at line <a class="el" href="featuresMatcher_8py_source.html#l00060">60</a> of file <a class="el" href="featuresMatcher_8py_source.html">featuresMatcher.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">def </span><a class="code" href="namespacefeaturesMatcher.html#a31a870d835a5f8bebe79e170e790a4d2">callbackSelector</a>(selectorMatcher):</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">for</span> moduli <span class="keywordflow">in</span> selectorMatcher.matcher:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">for</span> scene <span class="keywordflow">in</span> moduli.common:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">for</span> oggetti <span class="keywordflow">in</span> scene.adap:</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                obj_list.adap.append(oggetti)  </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -182,28 +188,50 @@ author: Vittoriofranco Vagge
 <p>Function. </p>
 <p>Function to match unionObject from featureSelector module with the IDs passed by reasoner module </p>
 
-<p class="definition">Definition at line <a class="el" href="featuresMatcher_8py_source.html#l00019">19</a> of file <a class="el" href="featuresMatcher_8py_source.html">featuresMatcher.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">def </span><a class="code" href="namespacefeaturesMatcher.html#a188d71ea933dc7f0ebf9c6585797e616">matcherFunction</a>(obj_list, r_out):</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">for</span> linea <span class="keywordflow">in</span> r_out.lines:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        matcher.sameObj[:] = []</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        matcher.correlation = linea.corr</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">for</span> ogg_reas <span class="keywordflow">in</span> linea.rec:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">for</span> ogg_lista <span class="keywordflow">in</span> obj_list.adap:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keywordflow">for</span> caratteristica <span class="keywordflow">in</span> ogg_lista.obj:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    <span class="keywordflow">if</span> (caratteristica.name == <span class="stringliteral">&#39;id&#39;</span>):</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                        <span class="keywordflow">if</span> ((ogg_reas[1:]) == (caratteristica.value[0])):</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                            matcher.sameObj.append(ogg_lista)                           <span class="comment"># make a list of matching objects</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                            obj_list.adap.remove(ogg_lista)                             <span class="comment"># delete the object from the list</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        pub_results.publish(matcher)                                                    <span class="comment"># pubblish output</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="featuresMatcher_8py_source.html#l00021">21</a> of file <a class="el" href="featuresMatcher_8py_source.html">featuresMatcher.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">def </span><a class="code" href="namespacefeaturesMatcher.html#a188d71ea933dc7f0ebf9c6585797e616">matcherFunction</a>(obj_list, r_out):</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">for</span> linea <span class="keywordflow">in</span> r_out.lines:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        matcher.sameObj[:] = []</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        matcher.correlation = linea.corr</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">for</span> ogg_reas <span class="keywordflow">in</span> linea.rec:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">for</span> ogg_lista <span class="keywordflow">in</span> obj_list.adap:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keywordflow">for</span> caratteristica <span class="keywordflow">in</span> ogg_lista.obj:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                    <span class="keywordflow">if</span> (caratteristica.name == <span class="stringliteral">&#39;id&#39;</span>):</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                        <span class="keywordflow">if</span> ((ogg_reas[1:]) == (caratteristica.value[0])):</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                            ogg_lista.obj.remove(caratteristica)                        <span class="comment"># remove ID feature</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                            matcher.sameObj.append(ogg_lista)                           <span class="comment"># make a list of matching objects</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                            obj_list.adap.remove(ogg_lista)                             <span class="comment"># delete the object from the list</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        if(len(matcher.sameObj)&gt;1):</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            obj_out.obj[:] = []</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">for</span> oggetto_1 <span class="keywordflow">in</span> matcher.sameObj:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordflow">if</span> (matcher.sameObj.index(oggetto_1)+1 &lt; len(matcher.sameObj)):</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    <span class="keywordflow">for</span> caratteristica_1 <span class="keywordflow">in</span> matcher.sameObj[matcher.sameObj.index(oggetto_1)].obj:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                        <span class="keywordflow">for</span> caratteristica_2 <span class="keywordflow">in</span> matcher.sameObj[matcher.sameObj.index(oggetto_1)+1].obj:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                            <span class="keywordflow">if</span> caratteristica_1.name == caratteristica_2.name:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                <span class="keywordflow">for</span> k <span class="keywordflow">in</span> range(0, len(caratteristica_1.value)):</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                    new_value = str((float(caratteristica_1.value[k])+float(caratteristica_2.value[k]))/2)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                    caratteristica_2.value[k] = new_value</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                caratteristica_1.name = <span class="stringliteral">&quot;done&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                            <span class="keywordflow">if</span> caratteristica_2 <span class="keywordflow">not</span> <span class="keywordflow">in</span> obj_out.obj:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                obj_out.obj.append(caratteristica_2)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        if(caratteristica_1.name != <span class="stringliteral">&quot;done&quot;</span>):</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                            obj_out.obj.append(caratteristica_1)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            matcherOut.obj[:] = obj_out.obj[:]</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            matcherOut.correlation = matcher.correlation</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            pub_results.publish(matcherOut)                                             <span class="comment"># publish output</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">if</span> matcher.sameObj:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                matcherOut.obj[:] = matcher.sameObj[0].obj[:]</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                matcherOut.correlation = matcher.correlation</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                pub_results.publish(matcherOut)                                         <span class="comment"># publish output</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="anamespacefeaturesMatcher_html_a31a870d835a5f8bebe79e170e790a4d2"><div class="ttname"><a href="namespacefeaturesMatcher.html#a31a870d835a5f8bebe79e170e790a4d2">featuresMatcher.callbackSelector</a></div><div class="ttdeci">def callbackSelector(selectorMatcher)</div><div class="ttdoc">CALLBACK.</div><div class="ttdef"><b>Definition:</b> <a href="featuresMatcher_8py_source.html#l00036">featuresMatcher.py:36</a></div></div>
-<div class="ttc" id="anamespacefeaturesMatcher_html_a188d71ea933dc7f0ebf9c6585797e616"><div class="ttname"><a href="namespacefeaturesMatcher.html#a188d71ea933dc7f0ebf9c6585797e616">featuresMatcher.matcherFunction</a></div><div class="ttdeci">def matcherFunction(obj_list, r_out)</div><div class="ttdoc">Function.</div><div class="ttdef"><b>Definition:</b> <a href="featuresMatcher_8py_source.html#l00019">featuresMatcher.py:19</a></div></div>
+<div class="ttc" id="anamespacefeaturesMatcher_html_a31a870d835a5f8bebe79e170e790a4d2"><div class="ttname"><a href="namespacefeaturesMatcher.html#a31a870d835a5f8bebe79e170e790a4d2">featuresMatcher.callbackSelector</a></div><div class="ttdeci">def callbackSelector(selectorMatcher)</div><div class="ttdoc">CALLBACK.</div><div class="ttdef"><b>Definition:</b> <a href="featuresMatcher_8py_source.html#l00060">featuresMatcher.py:60</a></div></div>
+<div class="ttc" id="anamespacefeaturesMatcher_html_a188d71ea933dc7f0ebf9c6585797e616"><div class="ttname"><a href="namespacefeaturesMatcher.html#a188d71ea933dc7f0ebf9c6585797e616">featuresMatcher.matcherFunction</a></div><div class="ttdeci">def matcherFunction(obj_list, r_out)</div><div class="ttdoc">Function.</div><div class="ttdef"><b>Definition:</b> <a href="featuresMatcher_8py_source.html#l00021">featuresMatcher.py:21</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
