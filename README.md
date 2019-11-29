@@ -180,7 +180,7 @@ rostpic echo /featureMatcher/dataPub
 </p>
 
 ### Video
-[![Watch the video](https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/imgs/VirtualBox_EmaroBox_1_21_11_2019_11_53_42.png)](https://www.youtube.com/embed/JwPSA9yZG2A)
+[![Watch the video](https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/imgs/VirtualBox_EmaroBox_1_29_11_2019_16_32_49.png?raw=true)](https://www.youtube.com/embed/JwPSA9yZG2A)
 
 ## Recommendations
 To add a perception module, you will need to add an Adapter module between perception module and feature selector module.
