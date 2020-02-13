@@ -140,7 +140,7 @@ It describes all the modules within the architecture, i.e, (i) the inputs, (ii) 
 
 ## Implementation
 
-## correlation_functions & tableMatcher
+### correlation_functions & tableMatcher
 
 
 ## Contents:
@@ -163,15 +163,12 @@ It describes all the modules within the architecture, i.e, (i) the inputs, (ii) 
 
 ## 5. Commands to launch the package
 
-
-
-
-1. Structure of the scripts
+### 1. Structure of the scripts
 
 The executables implementing the Correlation Table Manager are essentially two: correlation_functions.py and tableMatcher.py. 
 
 
-1.1. Correlation function
+#### 1.1. Correlation function
 
 correlation_functions.py file contains all the methods useful to compute distances between features.
 The euclidean distance function is defined at the beginning of the file and it is used to compute the distance coefficient for the following methods:
@@ -191,7 +188,7 @@ The euclidean distance function is defined at the beginning of the file and it i
 The above functions are characterized by a similar structure: 
 
 1. - Two “for” cycles. 
-- Two indices (index l and index k) are necessary to consider an object of one perceptive                             system with an object of another perceptive system. 
+- Two indices (index l and index k) are necessary to consider an object of one perceptive system with an object of another perceptive system. 
 - The two generic objects mentioned share necessarily at least two features (‘id’ and ‘feature_in_common’). 
 - The index j defined in tableMatcher.py allows to select the right feature in common.
 
@@ -203,7 +200,7 @@ A particular case is  get_colour_name. At the beginning of the function we defin
 If one colour is not present in the dictionary a message is displayed in the terminal reporting the name of the missing colour. Besides the computation of the table is stopped and the coefficient table is restored at the initial state. Therefore, in this case, the coefficient table is not updated with any distance computed by get_colour_name. 
 
 
-1.2 Table matcher
+#### 1.2 Table matcher
 
 tableMatcher.py file perform the following task:
 1. For each pair of perceptive systems a method suitable to compute the distance between the recognized feature in common is called. Therefore it is created a table for each pair of  perceptive system that share at least two features  (‘id’ and ‘feature_in_common’).
@@ -215,24 +212,24 @@ features.  Therefore the corresponding implemented distance function is called.
 If the feature is not recognized a message is displayed on the terminal suggesting to implement a method for the corresponding not recognized feature. At this point if the “id” feature is the only feature in common, the table is not computed for the considered pair of perceptive system. 
 
 
-2. Steps to add a feature
+### 2. Steps to add a feature
 
 In this section we want to describe the steps necessary to add new methods for corresponding not recognized feature. 
 
 
-2.1 Correlation function
+#### 2.1 Correlation function
 
 1. Define a new function in correlation_function.py file
 
 
-2.2 Table matcher
+#### 2.2 Table matcher
 
 1. Import the new function in tableMatcher.py
 2. Add a new parameter setup 
 3. Add an elif statement t to the already available ones. This statement verify that the detected “feature_name” is really consistent with the name of the feature and it allows to call the corresponding implemented distance function
 
 
-3. Parameters setup
+### 3. Parameters setup
 
 The parameters already defined  are the following ones:
 
@@ -256,12 +253,12 @@ rate: 			publishing rate. It is equal to 20
 Parameters initialization is performed in the launch file matcher.launch. 
 
 
-4. Test phase
+### 4. Test phase
 
 In this section we explain the workflow of ROS nodes. We start to visualize the input of our component, through the analysis of talkerMatcher.py . After the input we analyze the processing of the code, that compute the tables. At the end the values of tables are sent as output of tableMatcher.py. All of these phase are described in the following steps.
 
 
-4.1 Input
+#### 4.1 Input
 
 In order to test our component we have created a script talkerMatcher.py that simulates the presence of three perceptive modules. The first one perceives three objects while the second and third one perceive only two objects. The first and the third perceptive modules share “color_name” feature, the first and the second perceptive systems share “pose_2d” and “pose_3d” feature.
 TalkerMatcher.py starts the node “dummyTalker” and it publishes selectorMatcher message into the “/featureScheduler/pubIntersection” topic. 
@@ -315,7 +312,7 @@ rostopic echo /featureScheduler/pubIntersection.
 
 
 
-4.2 Processing
+### 4.2 Processing
 
 
 
@@ -356,7 +353,7 @@ It is clearly visible that the first object perceived by the second perceptive s
 
 
 
-4.3 Output
+## 4.3 Output
 
 Once multiple matrices of coefficients are created, the single coefficients are extracted from the matrices and they are packed into a correlationTable() message. A correlationTable() message is characterized by the following structure:
 
@@ -401,7 +398,7 @@ rostopic echo /correlationTables.
 As we can observe a correlationTable() message is made of 12 correlation. Since the two matrices have sizes 3x2 each one has 6 elements. In total there are 12 elements. The fields  first_percepted_object and second_percepted_object are filled with strings having the following structure:  “Id_perceptive_module”+ “Id_object”. For example the first corr() message visible in the above image contain the correlation value between the object with Id_object = 0 detected by the perceptive module having Id_perceptive_module = 1 and the object with Id_object = 7 detected by the perceptive module having Id_perceptive_module = 3. The value of correlation is 0.8595139.
 
 
-4.4 Exception management
+## 4.4 Exception management
 
 We suppose to introduce a feature name that it will be not recognized by the tableMatcher.py processing. Assuming to modify the feature name color_name into the feature name color. When the if… elif… else statement will be executed a method to compute the distance for  the feature name will not be found. Therefore a message containing the unrecognized feature name will be displayed on the terminal. 
 If it is the unique feature in common a correlation table will not be computed. In other cases the distances related to this feature will not considered. 
@@ -423,7 +420,7 @@ We assume to consider the color terra di siena that it is not present in the dic
 We can observe the message displayed. Besides since color_name is the unique feature in common between the first and the third perceptive system and the original coefficient matrix is in this case composed of only zeros the correlation table is not computed.  
 
 
-5. Commands to launch the package
+### 5. Commands to launch the package
 
 The terminal commands in order to run the code:
 
