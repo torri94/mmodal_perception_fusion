@@ -328,17 +328,9 @@ Once multiple matrices of coefficients are created, the single coefficients are 
 <img src="https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/imgs/immagini/5.png">
 </p>
 
-
-
-
 <p align="center"> 
 <img src="https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/imgs/immagini/6.png">
 </p>
-
-
-
-
-
 
 
 In the end the correlationTable() message is published to the topic /correlationTables.
@@ -349,25 +341,6 @@ rostopic echo /correlationTables.
 <p align="center"> 
 <img src="https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/imgs/immagini/7.png">
 </p>
-
-
-<p align="center"> 
-<img src="https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/imgs/immagini/8.png">
-</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 As we can observe a correlationTable() message is made of 12 correlation. Since the two matrices have sizes 3x2 each one has 6 elements. In total there are 12 elements. The fields  first_percepted_object and second_percepted_object are filled with strings having the following structure:  “Id_perceptive_module”+ “Id_object”. For example the first corr() message visible in the above image contain the correlation value between the object with Id_object = 0 detected by the perceptive module having Id_perceptive_module = 1 and the object with Id_object = 7 detected by the perceptive module having Id_perceptive_module = 3. The value of correlation is 0.8595139.
 
