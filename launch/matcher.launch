@@ -1,0 +1,16 @@
+<launch>
+	
+	<param name="alfa_2d" type="double" value = "0.4" />
+	<param name="beta_3d" type="double" value = "0.5" />
+	<param name="gamma_color_rgb" type="double"  value="0.003921569" />
+	<param name="delta_hue" type="double" value= "0.002777778" />
+	<param name="delta_sat" type="double" value="0.01"  />
+	<param name="delta_value" type="double"  value="0.01"  />
+	<param name="w" type="double"  value="10" />
+	<param name="rate" type="double"  value="20" />
+	
+	<node pkg="sofar_multimodal" type="talkerMatcher" name="talkerMatcher" 
+	output="screen"/>
+	<node pkg="sofar_multimodal" type="tableMatcher" name="tableMatcher" 
+	output="screen"/>
+</launch>
