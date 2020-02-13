@@ -143,7 +143,7 @@ It describes all the modules within the architecture, i.e, (i) the inputs, (ii) 
 ### correlation_functions & tableMatcher
 
 
-## Contents:
+### Contents:
 
 ## 1. Structure of the scripts	
 ##### 1.1 Correlation functions
