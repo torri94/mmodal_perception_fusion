@@ -312,7 +312,7 @@ rostopic echo /featureScheduler/pubIntersection.
 
 
 
-### 4.2 Processing
+#### 4.2 Processing
 
 
 
@@ -353,7 +353,7 @@ It is clearly visible that the first object perceived by the second perceptive s
 
 
 
-## 4.3 Output
+#### 4.3 Output
 
 Once multiple matrices of coefficients are created, the single coefficients are extracted from the matrices and they are packed into a correlationTable() message. A correlationTable() message is characterized by the following structure:
 
@@ -398,7 +398,7 @@ rostopic echo /correlationTables.
 As we can observe a correlationTable() message is made of 12 correlation. Since the two matrices have sizes 3x2 each one has 6 elements. In total there are 12 elements. The fields  first_percepted_object and second_percepted_object are filled with strings having the following structure:  “Id_perceptive_module”+ “Id_object”. For example the first corr() message visible in the above image contain the correlation value between the object with Id_object = 0 detected by the perceptive module having Id_perceptive_module = 1 and the object with Id_object = 7 detected by the perceptive module having Id_perceptive_module = 3. The value of correlation is 0.8595139.
 
 
-## 4.4 Exception management
+#### 4.4 Exception management
 
 We suppose to introduce a feature name that it will be not recognized by the tableMatcher.py processing. Assuming to modify the feature name color_name into the feature name color. When the if… elif… else statement will be executed a method to compute the distance for  the feature name will not be found. Therefore a message containing the unrecognized feature name will be displayed on the terminal. 
 If it is the unique feature in common a correlation table will not be computed. In other cases the distances related to this feature will not considered. 
