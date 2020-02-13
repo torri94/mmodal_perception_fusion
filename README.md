@@ -140,29 +140,28 @@ It describes all the modules within the architecture, i.e, (i) the inputs, (ii) 
 
 ## Implementation
 
-README:
-- correlation_functions & tableMatcher
+## correlation_functions & tableMatcher
 
 
-Contents:
+## Contents:
 
-1. Structure of the scripts	
-	1.1 Correlation functions
-	1.2 Table matcher
+## 1. Structure of the scripts	
+##### 1.1 Correlation functions
+##### 1.2 Table matcher
 
-2. Steps to add a feature 
-	2.1 Correlation functions	
-	2.2 Table matcher
+## 2. Steps to add a feature 
+##### 2.1 Correlation functions	
+##### 2.2 Table matcher
 
-3. Parameters setup
+## 3. Parameters setup
 
-4. Test phase
-	4.1 Input
-	4.2 Processing
-	4.3 Output
-	4.4 Exception management
+## 4. Test phase
+#### 4.1 Input
+#### 4.2 Processing
+#### 4.3 Output
+#### 4.4 Exception management
 
-5. Commands to launch the package
+## 5. Commands to launch the package
 
 
 
