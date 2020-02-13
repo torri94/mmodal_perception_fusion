@@ -1,0 +1,369 @@
+#!/usr/bin/env python
+"""
+THIS EXECUTABLE HAS THE AIM OF SIMULATING THE FEATURE SCHEDULER IN ORDER TO TEST THE CORRELATION TABLE COMPONENT. 
+IN THIS CASE WE HAVE SIMULATED ONLY TWO PERCEPTIVE SYSTEM WITH ONLY ONE FEATURE IN COMMON. THE FIRST PERCEPTIVE
+SYSTEM DETECT THREE OBJECTS WHILE THE SECOND ONLY TWO. 
+COMMENTING OR UNCOMMENTING	THE FEATURE THAT YOU WANT TO TEST YOU CAN OBSERVE THE RESULT IN TABLE MATCHER FILE.
+
+IF YOU WANT TO ADD MORE FEATURES IN COMMON YOU HAVE TO ADD feature() variables
+
+"""
+
+
+
+import rospy, math, random
+from std_msgs.msg import String
+
+from std_msgs.msg import String
+from std_msgs.msg import Float32MultiArray
+from sofar_multimodal.msg import adapter
+from sofar_multimodal.msg import feature
+from sofar_multimodal.msg import obj
+from sofar_multimodal.msg import commonFeature
+from sofar_multimodal.msg import selectorMatcher
+from sofar_multimodal.msg import corr
+from sofar_multimodal.msg import correlationTable
+
+def dummyTalker():
+    pub = rospy.Publisher('/featureScheduler/pubIntersection',selectorMatcher, queue_size=10)
+    rospy.init_node('dummyTalker', anonymous=True)
+    
+    # ID FEATURE RELATED TO THE OBJECTS ALWAYS PRESENT
+    
+    featid1 = feature()
+    featid2 = feature()
+    featid3 = feature()
+    featid4 = feature()
+    featid5 = feature()    
+    featid6 = feature()
+    featid7 = feature()
+    
+    # SEVEN OBJECTS IN TOTAL     
+    obj1 = obj()
+    obj2 = obj()
+    obj3 = obj()
+    obj4 = obj()
+    obj5 = obj()
+    obj6 = obj()
+    obj7 = obj()
+    
+    # THREE PERCEPTIVE SYSTEM 
+    adapter1 = adapter()
+    adapter2 = adapter()
+    adapter3 = adapter()
+    
+    adapter1.id_mod = 1
+    adapter2.id_mod = 2
+    adapter3.id_mod = 3
+
+#-------------------------------------------------------------     
+    # ID FEATURE OF THE OBJECT ALWAYS PRESENT
+    
+    featid1.types = 'int'
+    featid1.name = 'id'
+    featid1.value.append('0')
+
+    
+    featid2.types = 'int'
+    featid2.name = 'id'
+    featid2.value.append('3')
+
+    featid3.types = 'int'
+    featid3.name = 'id'
+    featid3.value.append('4')
+    
+    featid4.types = 'int'
+    featid4.name = 'id'
+    featid4.value.append('5')
+    
+    featid5.types = 'int'
+    featid5.name = 'id'
+    featid5.value.append('6')   
+    
+    featid6.types = 'int'
+    featid6.name = 'id'
+    featid6.value.append('7') 
+    
+    featid7.types = 'int'
+    featid7.name = 'id'
+    featid7.value.append('8') 
+    
+    obj1.obj.append(featid1)
+    obj2.obj.append(featid2)
+    obj3.obj.append(featid3)
+    
+    obj4.obj.append(featid4)
+    obj5.obj.append(featid5)    
+
+    obj6.obj.append(featid6)
+    obj7.obj.append(featid7) 
+#-------------------------------------------------------------     
+    # COLOR NAME FEATURE    
+    
+    feat1 = feature()
+    feat2 = feature()
+    feat3 = feature()
+    feat4 = feature()
+    feat5 = feature()
+    feat6 = feature()
+    feat7 = feature()
+    
+    feat1.types = 'string'
+    feat1.name = 'color_name'
+    feat1.value.append('blue')
+
+    
+    feat2.types = 'string'
+    feat2.name = 'color_name'
+    feat2.value.append('orange')
+
+    feat3.types = 'string'
+    feat3.name = 'color_name'
+    feat3.value.append('white')
+    
+    """feat4.types = 'string'
+    feat4.name = 'color_name'
+    feat4.value.append('purple')
+    
+    feat5.types = 'string'
+    feat5.name = 'color_name'
+    feat5.value.append('yellow')"""
+    
+    feat6.types = 'string'
+    feat6.name = 'color_name'
+    feat6.value.append('green')
+    
+    feat7.types = 'string'
+    feat7.name = 'color_name'
+    feat7.value.append('purple')
+    
+    obj1.obj.append(feat1)
+    obj2.obj.append(feat2)
+    obj3.obj.append(feat3)
+	
+	#obj4.obj.append(feat4)
+    #obj5.obj.append(feat5) 
+    
+    obj6.obj.append(feat6)
+    obj7.obj.append(feat7)
+    
+    #THE FIRST PERCEPTIVE SYSTEM DETECT THREE OBJECTS	
+    adapter1.adap.append(obj1)
+    adapter1.adap.append(obj2)
+    adapter1.adap.append(obj3)
+    
+    #THE THIRD PERCEPTIVE SYSTEM DETECT TWO OBJECTS	
+    adapter3.adap.append(obj6)
+    adapter3.adap.append(obj7)
+    
+    # ALWAYS TWO ADAPTER BECAUSE THE COMPARISON IS BETWEEN TWO ADAPTER
+    
+    comm1 = commonFeature()
+    comm1.common.append(adapter1)
+    comm1.common.append(adapter3)
+    
+#-------------------------------------------------------------      
+    # RGB FEATURE
+    
+    """
+    
+    feat1 = feature()
+    feat2 = feature()
+    feat3 = feature()
+    feat4 = feature()
+    feat5 = feature()
+    
+    feat1.types = 'float32[]'
+    feat1.name = 'color_rgb'
+    feat1.value.append('0')
+    feat1.value.append('0')
+    feat1.value.append('0')
+    
+    feat2.types = 'float32[]'
+    feat2.name = 'color_rgb'
+    feat2.value.append('200')
+    feat2.value.append('160')
+    feat2.value.append('200')
+
+    feat3.types = 'float32[]'
+    feat3.name = 'color_rgb'
+    feat3.value.append('165')
+    feat3.value.append('255')
+    feat3.value.append('160')
+    
+    feat4.types = 'float32[]'
+    feat4.name = 'color_rgb'
+    feat4.value.append('160')
+    feat4.value.append('250')
+    feat4.value.append('155')
+    
+    feat5.types = 'float32[]'
+    feat5.name = 'color_rgb'
+    feat5.value.append('140')
+    feat5.value.append('235')
+    feat5.value.append('120')
+    
+    obj1.obj.append(feat1)
+    obj2.obj.append(feat2)
+    obj3.obj.append(feat3)
+	
+	obj4.obj.append(feat4)
+    obj5.obj.append(feat5)
+    
+    obj6.obj.append(feat6)
+    obj7.obj.append(feat7)
+    
+    """
+#-------------------------------------------------------------      
+    # POSE_3D FEATURE
+    
+    # SEVEN OBJECTS IN TOTAL     
+    obj1 = obj()
+    obj2 = obj()
+    obj3 = obj()
+    obj4 = obj()
+    obj5 = obj()
+    obj6 = obj()
+    obj7 = obj()
+    
+    adapter1 = adapter()
+    adapter2 = adapter()
+    adapter3 = adapter()
+    
+    adapter1.id_mod = 1
+    adapter2.id_mod = 2
+    adapter3.id_mod = 3
+    
+    obj1.obj.append(featid1)
+    obj2.obj.append(featid2)
+    obj3.obj.append(featid3)
+    
+    obj4.obj.append(featid4)
+    obj5.obj.append(featid5)    
+
+    obj6.obj.append(featid6)
+    obj7.obj.append(featid7)
+    
+    feat1 = feature()
+    feat2 = feature()
+    feat3 = feature()
+    feat4 = feature()
+    feat5 = feature()
+    
+    feat1.types = 'float32[]'
+    feat1.name = 'pose_3d'
+    feat1.value.append('1')
+    feat1.value.append('2')
+    feat1.value.append('3')
+    
+    feat2.types = 'float32[]'
+    feat2.name = 'pose_3d'
+    feat2.value.append('4')
+    feat2.value.append('5')
+    feat2.value.append('6')
+
+    feat3.types = 'float32[]'
+    feat3.name = 'pose_3d'
+    feat3.value.append('7')
+    feat3.value.append('8')
+    feat3.value.append('9')
+    
+    feat4.types = 'float32[]'
+    feat4.name = 'pose_3d'
+    feat4.value.append('7.1')
+    feat4.value.append('8.2')
+    feat4.value.append('9.3')
+    
+    feat5.types = 'float32[]'
+    feat5.name = 'pose_3d'
+    feat5.value.append('7.5')
+    feat5.value.append('8.6')
+    feat5.value.append('9.8')
+    
+    obj1.obj.append(feat1)
+    obj2.obj.append(feat2)
+    obj3.obj.append(feat3)
+    
+    obj4.obj.append(feat4)
+    obj5.obj.append(feat5)
+    
+    """
+    obj6.obj.append(feat6)
+    obj7.obj.append(feat7)"""
+
+#-------------------------------------------------------------   
+    # POSE_2D FEATURE    
+    
+    feat1 = feature()
+    feat2 = feature()
+    feat3 = feature()
+    feat4 = feature()
+    feat5 = feature()
+    
+    feat1.types = 'float32[]'
+    feat1.name = 'pose_2d'
+    feat1.value.append('1')
+    feat1.value.append('2')
+    
+    feat2.types = 'float32[]'
+    feat2.name = 'pose_2d'
+    feat2.value.append('4')
+    feat2.value.append('5')
+
+    feat3.types = 'float32[]'
+    feat3.name = 'pose_2d'
+    feat3.value.append('7')
+    feat3.value.append('8')
+    
+    feat4.types = 'float32[]'
+    feat4.name = 'pose_2d'
+    feat4.value.append('7.1')
+    feat4.value.append('8.2')
+    
+    feat5.types = 'float32[]'
+    feat5.name = 'pose_2d'
+    feat5.value.append('7.3')
+    feat5.value.append('8.5')
+       
+    obj1.obj.append(feat1)
+    obj2.obj.append(feat2)
+    obj3.obj.append(feat3)
+    
+    obj4.obj.append(feat4)
+    obj5.obj.append(feat5)
+    
+    #obj6.obj.append(feat6)
+    #obj7.obj.append(feat7)
+# ---------------------------------------------------------------------
+	# ONCE WE HAVE FILLED THE OBJECT WITH THEIR RELATED COMMON FEATURE ADD TO ADAPTER OF THE PERCEPTIVE SYSTEM
+	
+	#THE FIRST PERCEPTIVE SYSTEM DETECT THREE OBJECTS	
+    adapter1.adap.append(obj1)
+    adapter1.adap.append(obj2)
+    adapter1.adap.append(obj3)    
+    
+    #THE SECOND PERCEPTIVE SYSTEM DETECT TWO OBJECTS
+    adapter2.adap.append(obj4)
+    adapter2.adap.append(obj5)    
+    
+    # ALWAYS TWO ADAPTER BECAUSE THE COMPARISON IS BETWEEN TWO ADAPTER
+    comm2 = commonFeature()
+    comm2.common.append(adapter1)
+    comm2.common.append(adapter2)
+
+	
+	# ADD THE COMPARISON BETWEEN FIRST AND SECOND PERCEPTIVE SYSTEM 
+    sel = selectorMatcher()
+    sel.matcher.append(comm1)
+    sel.matcher.append(comm2)
+    #print(sel)
+    pub.publish(sel)
+
+
+
+
+
+if __name__ == '__main__':
+	while not rospy.is_shutdown():
+		dummyTalker()
+   
