@@ -281,7 +281,9 @@ rostopic echo /featureScheduler/pubIntersection.
 
 
 
-
+<p align="center"> 
+<img src="https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/imgs/immagini/4.png">
+</p>
 
 
 
@@ -322,12 +324,16 @@ It is clearly visible that the first object perceived by the second perceptive s
 Once multiple matrices of coefficients are created, the single coefficients are extracted from the matrices and they are packed into a correlationTable() message. A correlationTable() message is characterized by the following structure:
 
 
+<p align="center"> 
+<img src="https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/imgs/immagini/5.png">
+</p>
 
 
 
 
-
-
+<p align="center"> 
+<img src="https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/imgs/immagini/6.png">
+</p>
 
 
 
@@ -340,10 +346,14 @@ From the terminal we can observe the structure of the published message running 
 rostopic echo /correlationTables. 
 
 
+<p align="center"> 
+<img src="https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/imgs/immagini/7.png">
+</p>
 
 
-
-
+<p align="center"> 
+<img src="https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/imgs/immagini/8.png">
+</p>
 
 
 
@@ -367,9 +377,16 @@ As we can observe a correlationTable() message is made of 12 correlation. Since 
 We suppose to introduce a feature name that it will be not recognized by the tableMatcher.py processing. Assuming to modify the feature name color_name into the feature name color. When the if… elif… else statement will be executed a method to compute the distance for  the feature name will not be found. Therefore a message containing the unrecognized feature name will be displayed on the terminal. 
 If it is the unique feature in common a correlation table will not be computed. In other cases the distances related to this feature will not considered. 
 
+<p align="center"> 
+<img src="https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/imgs/immagini/9.png">
+</p>
+
 It is possible to observe that only one matrix is computed. In fact color_name represents the only feature in common between the first and the third perceptive objects. 
 Now we assume to modify only pose_2d feature in the fake name pose. Below we visualize the result:
 
+<p align="center"> 
+<img src="https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/imgs/immagini/10.png">
+</p>
 
 In this case a message is displayed reporting the unrecognized feature name pose. Unlike the case of color here the computation of tables goes on because there is the remaining feature in common pose_3d between the first and the second perceptive system. 
 
@@ -378,7 +395,9 @@ Finally we consider a color that it is not available in the dictionary. Therefor
 We assume to consider the color terra di siena that it is not present in the dictionary. We report the result. 
 
 
-
+<p align="center"> 
+<img src="https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/imgs/immagini/11.png">
+</p>
 
 
 We can observe the message displayed. Besides since color_name is the unique feature in common between the first and the third perceptive system and the original coefficient matrix is in this case composed of only zeros the correlation table is not computed.  
