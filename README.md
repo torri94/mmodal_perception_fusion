@@ -265,7 +265,9 @@ TalkerMatcher.py starts the node “dummyTalker” and it publishes selectorMatc
 From the terminal we can observe the structure of the published message running the command 
 rostopic echo /featureScheduler/pubIntersection. 
 
-
+<p align="center"> 
+<img src="https://github.com/EmaroLab/mmodal_perception_fusion/blob/master/imgs/immagini/1.png">
+</p>
 
 
 
