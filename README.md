@@ -145,7 +145,7 @@ It describes all the modules within the architecture, i.e, (i) the inputs, (ii) 
 
 ## Contents:
 
-### 1. Structure of the scripts	
+### 1.[ Structure of the scripts. ](#desc)
 ##### 1.1 Correlation functions
 ##### 1.2 Table matcher
 
@@ -163,7 +163,8 @@ It describes all the modules within the architecture, i.e, (i) the inputs, (ii) 
 
 ### 5. Commands to launch the package
 
-### 1. Structure of the scripts
+<a name="desc"></a>
+## 1.1. Correlation function
 
 The executables implementing the Correlation Table Manager are essentially two: correlation_functions.py and tableMatcher.py. 
 
